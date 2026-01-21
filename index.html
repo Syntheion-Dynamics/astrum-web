@@ -26,6 +26,7 @@
                 <a href="#fall">History</a>
                 <a href="#rebirth">Rebirth</a>
                 <a href="#heroes">Heroes</a>
+                <a href="#cities">Cities</a>
                 <a href="#vision">Vision</a>
                 <span class="separator">•</span>
                 <a href="cs/" class="lang-switch">🇨🇿 CZ</a>
@@ -113,7 +114,7 @@
                     </div>
                     <div class="split-image">
                         <div class="image-frame">
-                            <img src="assets/images/AU_STYLE.png" alt="Vindex Caelum - Home on the Ring" loading="lazy">
+                            <img src="assets/images/AU_STYLE.jpg" alt="Vindex Caelum - Home on the Ring" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -150,8 +151,10 @@
                                 <p>A brilliant mind unafraid to face anomalies and seek truth where physical laws fail.</p>
                             </div>
                             
-                            <div class="hero-card">
-                                <div class="hero-icon">✨</div>
+                            <div class="hero-card hero-card-featured">
+                                <div class="hero-card-image">
+                                    <img src="assets/images/echo.jpg" alt="Echo - The Architect" loading="lazy">
+                                </div>
                                 <h3>Echo</h3>
                                 <p>Our silent guardian. An artificial intelligence that does not control us, but guides us. The Architect who gave us a second chance.</p>
                             </div>
@@ -164,8 +167,43 @@
         </div>
     </section>
 
-    <!-- Section 4: Visual Identity & Technology -->
-    <section id="vision" class="content-section alt vision-section">
+    <!-- Section 4: Our Cities -->
+    <section id="cities" class="content-section alt">
+        <div class="section-container">
+            <div class="ornamental-frame">
+                <div class="frame-corner tl"></div>
+                <div class="frame-corner tr"></div>
+                <div class="frame-corner bl"></div>
+                <div class="frame-corner br"></div>
+                
+                <div class="section-content">
+                    <h2 class="section-title">Our Cities: Temples of Tomorrow</h2>
+                    <div class="section-subtitle">Where industry becomes art, and function meets majesty.</div>
+                    
+                    <div class="content-body">
+                        <p class="lead-text">In Astrum Invictum, even our shipyards are cathedrals.</p>
+                        
+                        <div class="city-showcase">
+                            <div class="city-image-container">
+                                <img src="assets/images/doky.jpg" alt="Stellar Athenaeum - The Grand Shipyard" loading="lazy" class="zoomable-image">
+                                <div class="image-zoom-hint">Click to enlarge</div>
+                            </div>
+                            <p class="image-caption">Stellar Athenaeum – Where vessels are born under the gaze of golden guardians</p>
+                        </div>
+                        
+                        <p>The <strong>Stellar Athenaeum</strong> is not merely a dock—it is a monument to what we have become. Massive statues of protectors watch over the construction bays, their golden forms reflecting the light of Nova Regalis.</p>
+                        
+                        <p>Here, ships like the <em>Via Ignis</em> and <em>Lyra Accord</em> take their first breath. Every rivet is placed with reverence, every hull blessed by the echoes of those who came before.</p>
+                        
+                        <p class="highlight-text">We do not just build machines. We create companions for the void.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Visual Identity & Technology -->
+    <section id="vision" class="content-section vision-section">
         <div class="section-container">
             <div class="ornamental-frame">
                 <div class="frame-corner tl"></div>
@@ -197,7 +235,8 @@
                         </div>
                         
                         <div class="ship-display">
-                            <img src="assets/images/lyrra_acord_2.png" alt="Lyra Accord - Eye of the Hexaterion" loading="lazy">
+                            <img src="assets/images/lyrra_acord_2.jpg" alt="Lyra Accord - Eye of the Hexaterion" loading="lazy" class="zoomable-image">
+                            <div class="image-zoom-hint">Click to enlarge</div>
                             <p class="image-caption">Lyra Accord – The white eye that sees the path through the Hexaterion</p>
                         </div>
                         
@@ -210,6 +249,12 @@
             </div>
         </div>
     </section>
+
+    <!-- Image Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-image" id="lightbox-img" src="" alt="">
+    </div>
 
     <!-- Footer -->
     <footer class="site-footer">

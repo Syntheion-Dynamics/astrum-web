@@ -113,14 +113,15 @@ body {
 
 .nav-links {
     display: flex;
-    gap: 2.5rem;
+    gap: 2rem;
+    align-items: center;
 }
 
 .nav-links a {
     font-family: var(--font-display);
     color: var(--color-cream);
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     transition: all 0.3s ease;
@@ -154,7 +155,7 @@ body {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background: url('assets/images/Vindex_Caelum_Closeup.png') center/cover no-repeat;
+    background: url('assets/images/Vindex_Caelum_Closeup.jpg') center/cover no-repeat;
 }
 
 .hero-overlay {
@@ -487,7 +488,7 @@ body {
 /* === Heroes Grid === */
 .heroes-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     margin: 2.5rem 0;
 }
@@ -524,6 +525,144 @@ body {
 .hero-card p {
     font-size: 1rem;
     line-height: 1.6;
+}
+
+/* === Hero Card Featured (with image) === */
+.hero-card-featured {
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-card-featured .hero-card-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-card-featured .hero-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.hero-card-featured:hover .hero-card-image img {
+    transform: scale(1.1);
+}
+
+.hero-card-featured h3,
+.hero-card-featured p {
+    padding: 0 1.5rem;
+}
+
+.hero-card-featured h3 {
+    padding-top: 1.5rem;
+}
+
+.hero-card-featured p {
+    padding-bottom: 1.5rem;
+}
+
+/* === City Showcase (New Section) === */
+.city-showcase {
+    margin: 2.5rem 0;
+}
+
+.city-image-container {
+    position: relative;
+    border: 2px solid rgba(212, 175, 55, 0.3);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow-gold);
+}
+
+.city-image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+    cursor: pointer;
+}
+
+.city-image-container:hover img {
+    transform: scale(1.02);
+}
+
+.image-zoom-hint {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background: rgba(10, 22, 40, 0.8);
+    color: var(--color-gold);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-family: var(--font-display);
+    letter-spacing: 0.05em;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.city-image-container:hover .image-zoom-hint {
+    opacity: 1;
+}
+
+/* === Lightbox === */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(5, 13, 26, 0.95);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 3rem;
+    color: var(--color-gold);
+    cursor: pointer;
+    transition: color 0.3s ease;
+    z-index: 2001;
+}
+
+.lightbox-close:hover {
+    color: var(--color-white);
+}
+
+.lightbox-image {
+    max-width: 90%;
+    max-height: 90%;
+    border: 3px solid rgba(212, 175, 55, 0.5);
+    border-radius: 8px;
+    box-shadow: 0 0 60px rgba(212, 175, 55, 0.3);
+    animation: lightboxFadeIn 0.3s ease;
+}
+
+@keyframes lightboxFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 /* === Tech Showcase === */
@@ -566,6 +705,7 @@ body {
 .ship-display {
     margin: 3rem 0;
     text-align: center;
+    position: relative;
 }
 
 .ship-display img {
@@ -575,6 +715,28 @@ body {
     border: 2px solid rgba(0, 212, 255, 0.3);
     border-radius: 8px;
     box-shadow: 0 0 40px rgba(0, 212, 255, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.ship-display img:hover {
+    transform: scale(1.02);
+}
+
+.ship-display .image-zoom-hint {
+    position: absolute;
+    bottom: 60px;
+    right: calc(50% - 400px + 15px);
+}
+
+@media (max-width: 900px) {
+    .ship-display .image-zoom-hint {
+        right: 15px;
+    }
+}
+
+.ship-display:hover .image-zoom-hint {
+    opacity: 1;
 }
 
 .image-caption {
@@ -685,6 +847,10 @@ body {
     .ship-display img {
         max-width: 100%;
     }
+    
+    .heroes-grid {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 @media (max-width: 768px) {
@@ -711,6 +877,12 @@ body {
     .tech-showcase {
         grid-template-columns: 1fr;
     }
+    
+    .lightbox-close {
+        top: 15px;
+        right: 20px;
+        font-size: 2.5rem;
+    }
 }
 
 /* === Scroll Animations === */
@@ -723,4 +895,9 @@ body {
 .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* === Zoomable Images === */
+.zoomable-image {
+    cursor: pointer;
 }

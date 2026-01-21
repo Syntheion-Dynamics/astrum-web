@@ -192,6 +192,52 @@ function initTechFeatures() {
     });
 }
 
+// === Lightbox for Image Zoom ===
+function initLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.querySelector('.lightbox-close');
+    
+    if (!lightbox || !lightboxImg) return;
+    
+    // Get all zoomable images
+    const zoomableImages = document.querySelectorAll('.zoomable-image');
+    
+    zoomableImages.forEach(img => {
+        img.addEventListener('click', function(e) {
+            e.preventDefault();
+            lightboxImg.src = this.src;
+            lightboxImg.alt = this.alt;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scroll
+        });
+    });
+    
+    // Close on X button
+    if (lightboxClose) {
+        lightboxClose.addEventListener('click', closeLightbox);
+    }
+    
+    // Close on background click
+    lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) {
+            closeLightbox();
+        }
+    });
+    
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+            closeLightbox();
+        }
+    });
+    
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = ''; // Restore scroll
+    }
+}
+
 // === Initialize All ===
 document.addEventListener('DOMContentLoaded', () => {
     console.log('🌟 Astrum Invictum - Initializing...');
@@ -207,6 +253,9 @@ document.addEventListener('DOMContentLoaded', () => {
     initImageEffects();
     initTechFeatures();
     animateFrameCorners();
+    
+    // Lightbox for image zoom
+    initLightbox();
     
     // Optional: Uncomment for cursor trail effect (may impact performance on slower devices)
     // initCursorTrail();
