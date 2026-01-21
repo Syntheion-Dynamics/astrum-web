@@ -901,3 +901,7 @@ body {
 .zoomable-image {
     cursor: pointer;
 }
+
+.hero-card-featured .hero-card-image img {
+    object-position: center 20%;
+}
