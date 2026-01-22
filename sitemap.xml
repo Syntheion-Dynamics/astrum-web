@@ -4,30 +4,18 @@
 
   <url>
     <loc>https://astruminvictum.com/</loc>
-    <xhtml:link 
-      rel="alternate" 
-      hreflang="en" 
-      href="https://astruminvictum.com/" />
-    <xhtml:link 
-      rel="alternate" 
-      hreflang="cs" 
-      href="https://astruminvictum.com/cs/" />
-    <lastmod>2025-05-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://astruminvictum.com/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://astruminvictum.com/cs/" />
+    <lastmod>2026-01-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
     <loc>https://astruminvictum.com/cs/</loc>
-    <xhtml:link 
-      rel="alternate" 
-      hreflang="en" 
-      href="https://astruminvictum.com/" />
-    <xhtml:link 
-      rel="alternate" 
-      hreflang="cs" 
-      href="https://astruminvictum.com/cs/" />
-    <lastmod>2025-05-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://astruminvictum.com/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://astruminvictum.com/cs/" />
+    <lastmod>2026-01-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
